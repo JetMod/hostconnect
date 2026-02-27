@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 40" fill="none" aria-hidden="true">
+  <!-- Icon: house with key -->
+  <g stroke="#2c2a26" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M12 18v-6l8-6 8 6v6"/>
+    <path d="M8 22v-8l4-3"/>
+    <rect x="14" y="18" width="8" height="8" rx="1"/>
+    <circle cx="18" cy="14" r="1.5" fill="#2c2a26"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="38" y="26" font-family="Georgia, 'DM Serif Display', serif" font-size="22" font-weight="400" fill="#2c2a26" letter-spacing="0.02em">HostConnect</text>
+</svg>

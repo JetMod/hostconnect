@@ -1,0 +1,11 @@
+/* ===================================
+   Main CSS - Импорт всех стилей
+   =================================== */
+
+/* Базовые стили */
+@import url('style.css');
+
+/* Компоненты */
+@import url('header.css');
+@import url('video-hero.css');
+@import url('hero.css');

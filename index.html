@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HostConnect — Short-Term Rentals & Corporate Housing in Pittsburgh</title>
+  <meta name="description" content="HostConnect is Pittsburgh's choice for furnished short-term rentals and corporate housing. Book your extended stay with confidence.">
+  <!-- Подключение шрифтов Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Основные стили -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Иконки сайта -->
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicon.svg">
+</head>
+<body>
+  <main>
+
+    <!-- ========================================
+         СЕКЦИЯ HERO — главный экран
+         Содержит: хедер с навигацией, заголовок,
+         слайдшоу фотографий, статистика
+    ======================================== -->
+    <section class="hero" aria-label="Hero">
+
+      <!-- Декоративный фон hero -->
+      <div class="hero-bg">
+        <div class="hero-overlay"></div>
+      </div>
+
+      <!-- Шапка сайта (позиционируется поверх hero) -->
+      <header class="header">
+        <div class="container header-inner">
+          <!-- Логотип -->
+          <a href="/" class="logo">
+            <img src="img/logo.svg" alt="HostConnect" width="180" height="32">
+          </a>
+          <!-- Основная навигация -->
+          <nav class="nav">
+            <a href="#spaces">Spaces</a>
+            <a href="#film">Film & Production</a>
+            <a href="#list">List Your Property</a>
+            <a href="#blog">Blog</a>
+            <a href="#about">About Us</a>
+          </nav>
+          <!-- Кнопка мобильного меню (бургер) -->
+          <button class="menu-toggle" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Содержимое hero: текст слева + слайдшоу справа -->
+      <div class="hero-inner">
+
+        <!-- Левая колонка: заголовок, описание, кнопки, статистика -->
+        <div class="hero-content">
+          <span class="hero-line" aria-hidden="true"></span>
+          <p class="hero-eyebrow">Short-Term Rentals & Corporate Housing</p>
+          <h1 class="hero-title">Your home in the heart of Pittsburgh.</h1>
+          <p class="hero-tagline">Furnished spaces, flexible terms, and a team that cares. Whether you're relocating, on assignment, or simply visiting—we're here.</p>
+          <!-- Кнопки действий -->
+          <div class="hero-actions">
+            <a href="#search" class="btn btn-primary btn-hero">Find your stay <span class="btn-arrow" aria-hidden="true">→</span></a>
+            <a href="#how-it-works" class="hero-link">How it works <span class="hero-link-arrow" aria-hidden="true">→</span></a>
+          </div>
+          <!-- Карточки со статистикой (анимируются при появлении) -->
+          <div class="hero-stats">
+            <div class="hero-stat hero-stat--gold">
+              <strong data-count="200" data-suffix="+">200<span class="stat-suffix">+</span></strong>
+              <span>Happy stays</span>
+            </div>
+            <div class="hero-stat hero-stat--teal">
+              <strong data-count="4.9" data-suffix="★">4.9<span class="stat-suffix stat-suffix--star">★</span></strong>
+              <span>Avg rating</span>
+            </div>
+            <div class="hero-stat hero-stat--violet">
+              <strong data-count="5" data-suffix="+">5<span class="stat-suffix">+</span></strong>
+              <span>Neighborhoods</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Правая колонка: слайдшоу фотографий -->
+        <div class="hero-visual">
+          <div class="hero-slideshow">
+            <!-- Кнопки переключения слайдов -->
+            <button type="button" class="hero-arrow hero-arrow-prev" aria-label="Previous slide">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button type="button" class="hero-arrow hero-arrow-next" aria-label="Next slide">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+            <!-- Слайды -->
+            <div class="hero-slide active">
+              <img src="img/hero1.jpg" alt="Furnished stay in Pittsburgh" class="hero-slide-img" fetchpriority="high">
+            </div>
+            <div class="hero-slide">
+              <img src="img/hero2.jpg" alt="Comfortable rental space" class="hero-slide-img">
+            </div>
+            <div class="hero-slide">
+              <img src="img/4.jpg" alt="Spaces in Pittsburgh" class="hero-slide-img">
+            </div>
+            <div class="hero-slide">
+              <img src="img/10.jpg" alt="Your home in Pittsburgh" class="hero-slide-img">
+            </div>
+            <div class="hero-slide">
+              <img src="img/11.jpg" alt="Extended stay accommodation" class="hero-slide-img">
+            </div>
+            <!-- Плашка с геолокацией поверх слайда -->
+            <div class="hero-slide-card" aria-hidden="true">
+              <div class="hero-slide-card-pin">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              </div>
+              <div>
+                <p class="hero-slide-card-title">Pittsburgh, PA</p>
+                <p class="hero-slide-card-sub">★ 4.9 &nbsp;·&nbsp; Top rated</p>
+              </div>
+            </div>
+            <!-- Счётчик слайдов и точки-навигаторы -->
+            <div class="hero-counter" aria-live="polite">01 / 05</div>
+            <div class="hero-slideshow-dots" aria-hidden="true"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Кнопка прокрутки вниз -->
+      <a href="#spaces" class="hero-scroll-btn" aria-label="Scroll down">
+        <span class="hero-scroll-chevrons" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </a>
+    </section>
+
+        <!-- ========================================
+         СЕКЦИЯ БРОНИРОВАНИЯ — виджет поиска
+         Тёмный фон с декором, кастомный поиск:
+         - выбор района
+         - диапазон дат (двухмесячный календарь)
+         - гости (Adults / Children / Pets)
+         - кнопка Search
+         - бейджи доверия снизу
+    ======================================== -->
+    <section class="booking-bar" id="booking">
+
+      <!-- Декоративный фоновый слой (не кликается) -->
+      <div class="bw-bg" aria-hidden="true">
+        <!-- Золотистые свечения -->
+        <div class="bw-bg-glow bw-bg-glow--1"></div>
+        <div class="bw-bg-glow bw-bg-glow--2"></div>
+        <div class="bw-bg-glow bw-bg-glow--3"></div>
+        <!-- Точечная сетка -->
+        <div class="bw-bg-dots"></div>
+        <!-- Декоративные кольца (SVG) -->
+        <svg class="bw-bg-ring bw-bg-ring--1" viewBox="0 0 500 500" fill="none"><circle cx="250" cy="250" r="249" stroke="rgba(255,255,255,0.055)" stroke-width="1"/><circle cx="250" cy="250" r="180" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></svg>
+        <svg class="bw-bg-ring bw-bg-ring--2" viewBox="0 0 700 700" fill="none"><circle cx="350" cy="350" r="349" stroke="rgba(255,255,255,0.04)" stroke-width="1"/></svg>
+        <!-- Декоративные дуги (SVG) -->
+        <svg class="bw-bg-arc" viewBox="0 0 300 300" fill="none">
+          <path d="M 0 300 Q 150 0 300 300" stroke="rgba(166,124,82,0.12)" stroke-width="1" fill="none"/>
+          <path d="M 30 300 Q 150 30 270 300" stroke="rgba(166,124,82,0.07)" stroke-width="1" fill="none"/>
+        </svg>
+        <!-- Вертикальные световые линии -->
+        <div class="bw-bg-lines" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Надпись-метка и заголовок секции -->
+        <p class="bw-eyebrow">Quick Search</p>
+        <h2 class="bw-heading">Find Your Perfect Stay<br class="bw-heading-br"> in Pittsburgh</h2>
+
+        <!-- Основной виджет поиска (горизонтальный бар) -->
+        <div class="booking-widget" id="booking-widget">
+
+          <!-- Поле выбора района -->
+          <div class="bw-field bw-field--city" id="bw-city-field">
+            <button type="button" class="bw-trigger" id="bw-city-trigger" aria-expanded="false" aria-haspopup="listbox">
+              <svg class="bw-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span class="bw-trigger-text">
+                <span class="bw-trigger-hint">Location</span>
+                <span class="bw-trigger-value" id="bw-city-value">All Neighborhoods</span>
+              </span>
+              <svg class="bw-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <!-- Дропдаун со списком районов -->
+            <div class="bw-dropdown" id="bw-city-dropdown" role="listbox" aria-label="Select neighborhood">
+              <button class="bw-city-opt bw-city-opt--active" data-value="" role="option">All Neighborhoods</button>
+              <button class="bw-city-opt" data-value="downtown" role="option">Downtown</button>
+              <button class="bw-city-opt" data-value="strip" role="option">Strip District</button>
+              <button class="bw-city-opt" data-value="shadyside" role="option">Shadyside</button>
+              <button class="bw-city-opt" data-value="lawrenceville" role="option">Lawrenceville</button>
+              <button class="bw-city-opt" data-value="oakland" role="option">Oakland</button>
+            </div>
+          </div>
+
+          <!-- Разделитель между полями -->
+          <div class="bw-sep" aria-hidden="true"></div>
+
+          <!-- Поле выбора дат (открывает двухмесячный календарь) -->
+          <div class="bw-field bw-field--dates" id="bw-dates-field">
+            <button type="button" class="bw-trigger" id="bw-dates-trigger" aria-expanded="false" aria-haspopup="true">
+              <svg class="bw-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span class="bw-trigger-text">
+                <span class="bw-trigger-hint">Dates</span>
+                <span class="bw-trigger-value" id="bw-dates-value">Add dates</span>
+              </span>
+            </button>
+            <!-- Дропдаун: двухмесячный календарь с диапазоном -->
+            <div class="bw-dropdown bw-calendar-wrap" id="bw-dates-dropdown">
+              <div class="bw-cal-nav">
+                <!-- Кнопки предыдущий/следующий месяц -->
+                <button type="button" class="bw-cal-arrow" id="bw-cal-prev" aria-label="Previous month">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <!-- Сетки двух месяцев генерируются через JS -->
+                <div class="bw-cal-months" id="bw-cal-months"></div>
+                <button type="button" class="bw-cal-arrow" id="bw-cal-next" aria-label="Next month">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+              <!-- Кнопка сброса выбранных дат -->
+              <div class="bw-cal-footer">
+                <button type="button" class="bw-cal-clear" id="bw-cal-clear">Clear dates</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bw-sep" aria-hidden="true"></div>
+
+          <!-- Поле выбора гостей (открывает счётчики Adults / Children / Pets) -->
+          <div class="bw-field bw-field--guests" id="bw-guests-field">
+            <button type="button" class="bw-trigger" id="bw-guests-trigger" aria-expanded="false" aria-haspopup="true">
+              <svg class="bw-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span class="bw-trigger-text">
+                <span class="bw-trigger-hint">Guests</span>
+                <span class="bw-trigger-value" id="bw-guests-value">Add guests</span>
+              </span>
+            </button>
+            <!-- Дропдаун: счётчики гостей по категориям -->
+            <div class="bw-dropdown bw-guests-wrap" id="bw-guests-dropdown">
+              <!-- Взрослые (от 13 лет) -->
+              <div class="bw-guest-row">
+                <div class="bw-guest-info">
+                  <span class="bw-guest-type">Adults</span>
+                  <span class="bw-guest-sub">Ages 13+</span>
+                </div>
+                <div class="bw-guest-counter">
+                  <button type="button" class="bw-cnt-btn" id="adults-dec" aria-label="Decrease adults">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  </button>
+                  <output class="bw-cnt-num" id="adults-num" aria-live="polite">1</output>
+                  <button type="button" class="bw-cnt-btn" id="adults-inc" aria-label="Increase adults">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  </button>
+                </div>
+              </div>
+              <!-- Дети (2–12 лет) -->
+              <div class="bw-guest-row">
+                <div class="bw-guest-info">
+                  <span class="bw-guest-type">Children</span>
+                  <span class="bw-guest-sub">Ages 2–12</span>
+                </div>
+                <div class="bw-guest-counter">
+                  <button type="button" class="bw-cnt-btn" id="children-dec" aria-label="Decrease children">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  </button>
+                  <output class="bw-cnt-num" id="children-num" aria-live="polite">0</output>
+                  <button type="button" class="bw-cnt-btn" id="children-inc" aria-label="Increase children">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  </button>
+                </div>
+              </div>
+              <!-- Питомцы (только собаки) -->
+              <div class="bw-guest-row">
+                <div class="bw-guest-info">
+                  <span class="bw-guest-type">Pets</span>
+                  <span class="bw-guest-sub bw-guest-sub--accent">Dogs only</span>
+                </div>
+                <div class="bw-guest-counter">
+                  <button type="button" class="bw-cnt-btn" id="pets-dec" aria-label="Decrease pets">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  </button>
+                  <output class="bw-cnt-num" id="pets-num" aria-live="polite">0</output>
+                  <button type="button" class="bw-cnt-btn" id="pets-inc" aria-label="Increase pets">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Кнопка поиска (скролл к секции #search) -->
+          <button type="button" class="bw-search-btn" id="bw-search-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span>Search</span>
+          </button>
+
+        </div>
+
+        <!-- Бейджи доверия под виджетом (frosted glass стиль) -->
+        <div class="bw-trust-pills">
+          <div class="bw-trust-pill">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>200+ Happy Stays</span>
+          </div>
+          <div class="bw-trust-pill">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span>4.9 Average Rating</span>
+          </div>
+          <div class="bw-trust-pill">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Flexible Terms</span>
+          </div>
+          <div class="bw-trust-pill">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Best Price Guarantee</span>
+          </div>
+          <div class="bw-trust-pill">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span>24/7 Direct Support</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================
+         СЕКЦИЯ ДОВЕРИЯ — преимущества HostConnect
+         4 карточки с иконками
+    ======================================== -->
+    <section class="trust" id="trust">
+      <div class="trust-bg" aria-hidden="true"></div>
+      <div class="container">
+
+        <div class="trust-header">
+          <p class="section-label">Why HostConnect</p>
+          <h2 class="trust-title">Everything you need.<br><em>Nothing</em> you don't.</h2>
+          <p class="trust-subtitle">We handle the details so you can focus on what matters—your work, your visit, your life.</p>
+        </div>
+
+        <div class="trust-grid">
+
+          <article class="trust-card" data-trust-idx="0">
+            <div class="trust-card-accent"></div>
+            <div class="trust-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="trust-card-body">
+              <h3>Fully Furnished</h3>
+              <p>Move-in ready apartments with quality furniture, fresh linens, and all essentials—no setup, no stress.</p>
+            </div>
+            <div class="trust-card-stat">
+              <span class="trust-stat-num">24h</span>
+              <span class="trust-stat-label">move-in ready</span>
+            </div>
+          </article>
+
+          <article class="trust-card" data-trust-idx="1">
+            <div class="trust-card-accent"></div>
+            <div class="trust-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div class="trust-card-body">
+              <h3>Rated & Reviewed</h3>
+              <p>Consistently top-rated by guests and corporate partners across Pittsburgh. Your satisfaction is our standard.</p>
+            </div>
+            <div class="trust-card-stat">
+              <span class="trust-stat-num">4.9<span class="trust-stat-star">★</span></span>
+              <span class="trust-stat-label">average rating</span>
+            </div>
+          </article>
+
+          <article class="trust-card" data-trust-idx="2">
+            <div class="trust-card-accent"></div>
+            <div class="trust-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="trust-card-body">
+              <h3>Flexible Terms</h3>
+              <p>From a single week to a full year—stay as long as you need with simple, transparent agreements.</p>
+            </div>
+            <div class="trust-card-stat">
+              <span class="trust-stat-num">1w–12m</span>
+              <span class="trust-stat-label">stay duration</span>
+            </div>
+          </article>
+
+          <article class="trust-card" data-trust-idx="3">
+            <div class="trust-card-accent"></div>
+            <div class="trust-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="trust-card-body">
+              <h3>Best Price Guarantee</h3>
+              <p>Book direct for the lowest rates—always. Found a better price? We'll match or beat it, guaranteed.</p>
+            </div>
+            <div class="trust-card-stat">
+              <span class="trust-stat-num">200+</span>
+              <span class="trust-stat-label">happy stays</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         СЕКЦИЯ "РАЗНИЦА HOSTCONNECT"
+         Текст + фото объекта недвижимости
+    ======================================== -->
+    <section class="difference" id="about">
+      <div class="container difference-inner">
+        <div class="difference-content">
+          <h2 class="section-title">The HostConnect Difference</h2>
+          <p class="difference-text">Whether you're here for a month or a year, every space is chosen for location and comfort, furnished with care, and supported by a team that responds. Experience Pittsburgh like a local—with the convenience of a turnkey home.</p>
+          <a href="#search" class="btn btn-primary">Browse Spaces</a>
+        </div>
+        <!-- Карточка с фото объекта -->
+        <div class="difference-visual">
+          <div class="visual-card visual-card-with-img">
+            <img src="img/8.jpg" alt="HostConnect property in Pittsburgh">
+            <div class="visual-card-caption">
+              <span class="visual-label">Pittsburgh</span>
+              <p>Downtown • Strip District • Shadyside • Lawrenceville • More</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         СЕКЦИЯ "ПОЧЕМУ БРОНИРОВАТЬ НАПРЯМУЮ"
+         4 преимущества прямого бронирования
+    ======================================== -->
+    <section class="book-direct" id="book-direct">
+      <div class="container">
+        <div class="book-direct-block">
+
+          <!-- Левая панель -->
+          <div class="bd-left">
+            <p class="bd-label">Why Book Direct</p>
+            <h2 class="bd-title">Skip the middleman.<br>Keep the savings.</h2>
+            <p class="bd-desc">Booking directly with HostConnect means better rates, real support, and perks you won't find anywhere else.</p>
+            <div class="bd-actions">
+              <a href="#search" class="btn bd-btn-primary">Book Now</a>
+              <a href="tel:+14125551234" class="btn bd-btn-ghost">Call Us</a>
+            </div>
+            <div class="bd-badge">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 17s7-3.5 7-8.75V4.375L10 2 3 4.375V8.25C3 13.5 10 17 10 17z"/></svg>
+              Best Price Guarantee
+            </div>
+          </div>
+
+          <!-- Правая панель — карточки -->
+          <div class="bd-right">
+            <div class="bd-item">
+              <div class="bd-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <div>
+                <h3>No Fees or Markups</h3>
+                <p>Rates directly from us — always lower than any third-party platform.</p>
+              </div>
+            </div>
+            <div class="bd-item">
+              <div class="bd-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <div>
+                <h3>Exclusive Perks</h3>
+                <p>Welcome gifts, flexible check-in, and privileges only for direct guests.</p>
+              </div>
+            </div>
+            <div class="bd-item">
+              <div class="bd-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div>
+                <h3>Direct Support 24/7</h3>
+                <p>Talk to our team in real time — no bots, no call centres, no delays.</p>
+              </div>
+            </div>
+            <div class="bd-item">
+              <div class="bd-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+              </div>
+              <div>
+                <h3>Flexible Cancellation</h3>
+                <p>Plans change. Our direct booking policy gives you more freedom to adjust.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+        <!-- ========================================
+         СЕКЦИЯ КАК ЭТО РАБОТАЕТ
+         3 шага процесса бронирования
+    ======================================== -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <p class="section-label">Process</p>
+        <h2 class="section-title">How It Works</h2>
+        <p class="hiw-subtitle">Three simple steps to find your perfect space—no hassle, no guesswork.</p>
+        <div class="steps">
+
+          <div class="step">
+            <div class="step-icon-wrap">
+              <span class="step-num">1</span>
+              <svg class="step-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="22" cy="22" r="13" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M31.5 31.5L40 40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M17 22h10M22 17v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="step-body">
+              <h3>Tell Us What You Need</h3>
+              <p>Share your dates, budget, and preferences. Browse listings or submit a custom request in under two minutes.</p>
+            </div>
+          </div>
+
+          <div class="step-arrow" aria-hidden="true">
+            <svg viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 12 Q30 2 60 12" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <path d="M52 7l8 5-8 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="step">
+            <div class="step-icon-wrap">
+              <span class="step-num">2</span>
+              <svg class="step-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="16" cy="18" r="6" stroke="currentColor" stroke-width="2.5"/>
+                <circle cx="32" cy="18" r="6" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M4 38c0-6.627 5.373-12 12-12h16c6.627 0 12 5.373 12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M31 30l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="step-body">
+              <h3>We Match You</h3>
+              <p>Our team hand-picks options that fit your criteria and sends you tailored recommendations—usually within hours.</p>
+            </div>
+          </div>
+
+          <div class="step-arrow" aria-hidden="true">
+            <svg viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 12 Q30 2 60 12" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <path d="M52 7l8 5-8 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="step">
+            <div class="step-icon-wrap">
+              <span class="step-num">3</span>
+              <svg class="step-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="10" y="20" width="28" height="22" rx="3" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M16 20v-5a8 8 0 0116 0v5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="24" cy="31" r="3" stroke="currentColor" stroke-width="2"/>
+                <path d="M24 34v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="step-body">
+              <h3>Book &amp; Move In</h3>
+              <p>Confirm your stay, sign a simple digital agreement, and move in—fully furnished and ready from day one.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================
+         СЕКЦИЯ РЕКОМЕНДАЦИЙ — карусель объектов
+         Заголовок, фильтры, 3 карточки + навигация
+    ======================================== -->
+    <section class="recommendations" id="spaces">
+      <div class="container">
+
+        <div class="rec-header">
+          <p class="section-label">Featured Spaces</p>
+          <h2 class="rec-title">Recommendations For You</h2>
+          <p class="rec-subtitle">Browse our curated collection of furnished spaces — each one move-in ready and supported from day one.</p>
+        </div>
+
+        <div class="rec-carousel-outer">
+          <div class="rec-carousel" id="rec-carousel">
+
+            <!-- Card 1: Bloomfield King @E -->
+            <article class="rec-card">
+              <div class="rec-card-img-wrap">
+                <span class="rec-price">$40 <span>night</span></span>
+                <img src="img/9.jpg" alt="Bloomfield Room with King Bed" class="rec-card-img">
+              </div>
+              <div class="rec-card-body">
+                <h3 class="rec-card-name">Bloomfield — Room w/ King Bed</h3>
+                <p class="rec-card-location">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Bloomfield · 406 S Evaline St
+                </p>
+                <div class="rec-card-meta">
+                  <span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20v-7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v7"/><path d="M2 16h20"/><rect x="5" y="9" width="5" height="4" rx="1"/><rect x="14" y="9" width="5" height="4" rx="1"/></svg>
+                    1
+                  </span>
+                  <span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4a2 2 0 0 1 4 0v6H7V4z"/><path d="M2 10h20v2a8 8 0 0 1-8 8H10a8 8 0 0 1-8-8v-2z"/><path d="M7 20v2"/><path d="M17 20v2"/></svg>
+                    1
+                  </span>
+                  <span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="6" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="18" cy="7" r="2.5"/><path d="M14 20a5 5 0 0 1 9 0"/></svg>
+                    2
+                  </span>
+                </div>
+                <div class="rec-card-tours">
+                  <a href="#" class="rec-tour-btn">
+                    3D Tour
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                  </a>
+                  <a href="#" class="rec-tour-btn">
+                    Walking Tour
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="m10 8 5 3-5 3V8z"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                  </a>
+                </div>
+                <a href="#" class="rec-show-more">Show more <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+
+            <!-- Card 2: Bloomfield King @V -->
+            <article class="rec-card">
+              <div class="rec-card-img-wrap">
+                <span class="rec-price">$41 <span>night</span></span>
+                <img src="img/10.jpg" alt="Bloomfield Room with King Bed" class="rec-card-img">
+              </div>
+              <div class="rec-card-body">
+                <h3 class="rec-card-name">Bloomfield — Room w/ King Bed</h3>
+                <p class="rec-card-location">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Bloomfield · 406 S Evaline St
+                </p>
+                <div class="rec-card-meta">
+                  <span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20v-7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v7"/><path d="M2 16h20"/><rect x="5" y="9" width="5" height="4" rx="1"/><rect x="14" y="9" width="5" height="4" rx="1"/></svg>
+                    1
+                  </span>
+                  <span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4a2 2 0 0 1 4 0v6H7V4z"/><path d="M2 10h20v2a8 8 0 0 1-8 8H10a8 8 0 0 1-8-8v-2z"/><path d="M7 20v2"/><path d="M17 20v2"/></svg>
+                    1
+                  </span>
+                  <span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="6" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="18" cy="7" r="2.5"/><path d="M14 20a5 5 0 0 1 9 0"/></svg>
+                    2
+                  </span>
+                </div>
+                <div class="rec-card-tours">
+                  <a href="#" class="rec-tour-btn">
+                    3D Tour
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                  </a>
+                  <a href="#" class="rec-tour-btn">
+                    Walking Tour
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="m10 8 5 3-5 3V8z"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                  </a>
+                </div>
+                <a href="#" class="rec-show-more">Show more <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+
+            <!-- Card 3: Cozy Private Room M -->
+            <article class="rec-card">
+              <div class="rec-card-img-wrap">
+                <span class="rec-price">$38 <span>night</span></span>
+                <img src="img/7.jpg" alt="Cozy Private Room" class="rec-card-img">
+              </div>
+              <div class="rec-card-body">
+                <h3 class="rec-card-name">Cozy Private Room M</h3>
+                <p class="rec-card-location">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Bloomfield · 406 S Evaline St
+                </p>
+                <div class="rec-card-meta">
+                  <span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20v-7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v7"/><path d="M2 16h20"/><rect x="5" y="9" width="5" height="4" rx="1"/><rect x="14" y="9" width="5" height="4" rx="1"/></svg>
+                    1
+                  </span>
+                  <span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4a2 2 0 0 1 4 0v6H7V4z"/><path d="M2 10h20v2a8 8 0 0 1-8 8H10a8 8 0 0 1-8-8v-2z"/><path d="M7 20v2"/><path d="M17 20v2"/></svg>
+                    1
+                  </span>
+                  <span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="6" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="18" cy="7" r="2.5"/><path d="M14 20a5 5 0 0 1 9 0"/></svg>
+                    2
+                  </span>
+                </div>
+                <div class="rec-card-tours">
+                  <a href="#" class="rec-tour-btn">
+                    Floorplan
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M3 9h6"/><path d="M3 15h6"/></svg>
+                  </a>
+                  <a href="#" class="rec-tour-btn">
+                    3D Tour
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                  </a>
+                </div>
+                <a href="#" class="rec-show-more">Show more <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+
+            <!-- Card 4: Modern and Spacious House -->
+            <article class="rec-card">
+              <div class="rec-card-img-wrap">
+                <span class="rec-price">$135 <span>night</span></span>
+                <img src="img/8.jpg" alt="Modern and Spacious House" class="rec-card-img">
+              </div>
+              <div class="rec-card-body">
+                <h3 class="rec-card-name">Modern and Spacious House</h3>
+                <p class="rec-card-location">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Pittsburgh · 3767 Mount Troy Rd
+                </p>
+                <div class="rec-card-meta">
+                  <span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20v-7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v7"/><path d="M2 16h20"/><rect x="5" y="9" width="5" height="4" rx="1"/><rect x="14" y="9" width="5" height="4" rx="1"/></svg>
+                    4
+                  </span>
+                  <span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4a2 2 0 0 1 4 0v6H7V4z"/><path d="M2 10h20v2a8 8 0 0 1-8 8H10a8 8 0 0 1-8-8v-2z"/><path d="M7 20v2"/><path d="M17 20v2"/></svg>
+                    2.5
+                  </span>
+                  <span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="6" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="18" cy="7" r="2.5"/><path d="M14 20a5 5 0 0 1 9 0"/></svg>
+                    8
+                  </span>
+                </div>
+                <div class="rec-card-tours">
+                  <a href="#" class="rec-tour-btn">
+                    Floorplan
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M3 9h6"/><path d="M3 15h6"/></svg>
+                  </a>
+                  <a href="#" class="rec-tour-btn">
+                    3D Tour
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                  </a>
+                  <a href="#" class="rec-tour-btn">
+                    Walking Tour
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="m10 8 5 3-5 3V8z"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                  </a>
+                </div>
+                <a href="#" class="rec-show-more">Show more <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+
+            <!-- Card 5: Private Room 2A -->
+            <article class="rec-card">
+              <div class="rec-card-img-wrap">
+                <span class="rec-price">$43 <span>night</span></span>
+                <img src="img/6.jpg" alt="Private Room 2A with Queen Bed" class="rec-card-img">
+              </div>
+              <div class="rec-card-body">
+                <h3 class="rec-card-name">Private Room 2A w/ Queen Bed</h3>
+                <p class="rec-card-location">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Pittsburgh · 2320 Sherbrook St
+                </p>
+                <div class="rec-card-meta">
+                  <span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20v-7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v7"/><path d="M2 16h20"/><rect x="5" y="9" width="5" height="4" rx="1"/><rect x="14" y="9" width="5" height="4" rx="1"/></svg>
+                    1
+                  </span>
+                  <span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4a2 2 0 0 1 4 0v6H7V4z"/><path d="M2 10h20v2a8 8 0 0 1-8 8H10a8 8 0 0 1-8-8v-2z"/><path d="M7 20v2"/><path d="M17 20v2"/></svg>
+                    1
+                  </span>
+                  <span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="6" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="18" cy="7" r="2.5"/><path d="M14 20a5 5 0 0 1 9 0"/></svg>
+                    2
+                  </span>
+                </div>
+                <div class="rec-card-tours">
+                  <a href="#" class="rec-tour-btn">
+                    Floorplan
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M3 9h6"/><path d="M3 15h6"/></svg>
+                  </a>
+                  <a href="#" class="rec-tour-btn">
+                    3D Tour
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                  </a>
+                  <a href="#" class="rec-tour-btn">
+                    Walking Tour
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="m10 8 5 3-5 3V8z"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                  </a>
+                </div>
+                <a href="#" class="rec-show-more">Show more <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Навигация карусели -->
+        <div class="rec-nav">
+          <button type="button" class="rec-nav-btn" id="rec-prev" aria-label="Previous properties">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button type="button" class="rec-nav-btn" id="rec-next" aria-label="Next properties">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================
+         ФУТЕР — контактная информация
+         Логотип, быстрые ссылки, контакты
+    ======================================== -->
+    <footer class="footer" id="contact">
+
+      <!-- CTA-полоса -->
+      <div class="footer-cta">
+        <div class="container">
+          <div class="footer-cta-inner">
+            <div class="footer-cta-text">
+              <h2>Ready to find your perfect space?</h2>
+              <p>Furnished. Flexible. Fully supported — from day one.</p>
+            </div>
+            <div class="footer-cta-actions">
+              <a href="#search" class="btn ftr-btn-primary">Browse Spaces</a>
+              <a href="mailto:hello@hostconnect.com" class="btn ftr-btn-ghost">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Основной блок -->
+      <div class="footer-main">
+        <div class="container">
+          <div class="footer-grid">
+
+            <!-- Бренд -->
+            <div class="footer-brand">
+              <a href="/" class="footer-logo" aria-label="HostConnect home">
+                <img src="img/logo.svg" alt="HostConnect" width="152" height="28">
+              </a>
+              <p>Premium short-term rentals &amp; corporate housing in Pittsburgh, PA. Move-in ready from day one.</p>
+              <!-- Соцсети -->
+              <div class="footer-socials">
+                <a href="#" class="footer-social-link" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                </a>
+                <a href="#" class="footer-social-link" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.5M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+                </a>
+                <a href="#" class="footer-social-link" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Навигация -->
+            <div class="footer-col">
+              <h4>Explore</h4>
+              <ul>
+                <li><a href="#spaces">Available Spaces</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#book-direct">Why Book Direct</a></li>
+                <li><a href="#about">About Us</a></li>
+              </ul>
+            </div>
+
+            <!-- Контакты -->
+            <div class="footer-col">
+              <h4>Contact</h4>
+              <ul>
+                <li>
+                  <a href="mailto:hello@hostconnect.com">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m2 6 10 7 10-7"/></svg>
+                    hello@hostconnect.com
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+14125551234">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.62 19a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 3.09 4.18 2 2 0 0 1 5.07 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    (412) 555-1234
+                  </a>
+                </li>
+                <li class="footer-col-address">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Pittsburgh, PA
+                </li>
+              </ul>
+            </div>
+
+          
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Нижняя строка -->
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2025 HostConnect. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Settings</a>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+  </main>
+
+  <!-- Основной скрипт -->
+  <script src="script.js"></script>
+</body>
+</html>
