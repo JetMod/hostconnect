@@ -1,0 +1,97 @@
+/* ===== Шапка сайта (внутри hero) ===== */
+.hero .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(44, 42, 38, 0.08);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 68px;
+}
+.logo {
+  display: inline-block;
+  color: var(--color-text);
+  filter: drop-shadow(0 1px 3px rgba(44, 42, 38, 0.06));
+}
+.logo img {
+  display: block;
+  height: 30px;
+  width: auto;
+}
+.logo:not(:has(img)) {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 400;
+  color: var(--color-text);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.nav a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  padding: 0 1.1rem;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 1.1rem;
+  right: 1.1rem;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 2px 2px 0 0;
+  transform: scaleX(0);
+  transition: transform 0.22s ease;
+  transform-origin: center;
+}
+.nav a:hover {
+  color: var(--color-accent);
+}
+.nav a:hover::after {
+  transform: scaleX(1);
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  background: none;
+  border: none;
+  color: var(--color-text);
+}
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+/* Бургер → крестик при открытом меню */
+body.nav-open .menu-toggle span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+body.nav-open .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+body.nav-open .menu-toggle span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}

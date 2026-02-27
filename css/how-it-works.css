@@ -1,0 +1,126 @@
+
+/* ===== Как это работает — 3 шага ===== */
+/* ===== How It Works ===== */
+.how-it-works {
+  padding: 6rem 0 5rem;
+  background: var(--color-surface-elevated);
+}
+.how-it-works .section-title {
+  margin-bottom: 0.75rem;
+}
+.hiw-subtitle {
+  font-size: 1.0625rem;
+  color: var(--color-text-muted);
+  margin: 0 0 3rem;
+  max-width: 480px;
+}
+.steps {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr 60px 1fr;
+  gap: 0;
+  align-items: center;
+}
+.step-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  opacity: 0.55;
+  padding: 0 4px;
+  margin-top: -2.5rem;
+}
+.step-arrow svg {
+  width: 100%;
+  height: 24px;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.25rem 1.75rem 2rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 20px rgba(44, 42, 38, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+}
+.step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(44, 42, 38, 0.1);
+  border-color: var(--color-accent);
+}
+.step-icon-wrap {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.step-icon-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(166, 124, 82, 0.1);
+  transition: background 0.25s ease;
+}
+.step:hover .step-icon-wrap::before {
+  background: rgba(166, 124, 82, 0.18);
+}
+.step-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-accent);
+  position: relative;
+  z-index: 1;
+}
+.step-num {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  font-weight: 700;
+  font-size: 0.7rem;
+  color: #fff;
+  background: var(--color-accent);
+  border-radius: 50%;
+  z-index: 2;
+  border: 2px solid var(--color-surface-elevated);
+}
+.step-body {
+  flex: 1;
+}
+.step h3 {
+  font-family: var(--font-display);
+  font-size: 1.175rem;
+  font-weight: 400;
+  margin: 0 0 0.6rem;
+  color: var(--color-text);
+}
+.step p {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .step-arrow {
+    transform: rotate(90deg);
+    width: 60px;
+    margin: -0.5rem auto;
+    margin-top: -0.5rem;
+  }
+  .step-arrow svg {
+    width: 60px;

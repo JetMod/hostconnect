@@ -1,0 +1,174 @@
+/* ===== Секция доверия — преимущества HostConnect ===== */
+.trust {
+  padding: 6rem 0 5.5rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(170deg, var(--color-bg) 0%, var(--color-surface-elevated) 100%);
+}
+.trust-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(166, 124, 82, 0.055) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.trust-bg::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(166, 124, 82, 0.07) 0%, transparent 65%);
+  filter: blur(60px);
+}
+
+/* Header */
+.trust-header {
+  text-align: center;
+  max-width: 38rem;
+  margin: 0 auto 3.5rem;
+  position: relative;
+  z-index: 1;
+}
+.trust-header .section-label {
+  text-align: center;
+  margin-bottom: 0.875rem;
+}
+.trust-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: var(--color-text);
+  margin: 0 0 1rem;
+}
+.trust-title em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+.trust-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Grid */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Card */
+.trust-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s, translate 0.5s;
+  opacity: 0;
+  translate: 0 24px;
+}
+.trust-card.trust-card--visible {
+  opacity: 1;
+  translate: 0 0;
+}
+.trust-card:hover {
+  border-color: rgba(166, 124, 82, 0.35);
+  box-shadow: 0 20px 56px rgba(44, 42, 38, 0.08), 0 4px 16px rgba(166, 124, 82, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Accent bar on top */
+.trust-card-accent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--color-accent), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.trust-card:hover .trust-card-accent {
+  opacity: 1;
+}
+
+/* Icon */
+.trust-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(166, 124, 82, 0.15) 0%, rgba(166, 124, 82, 0.08) 100%);
+  color: var(--color-accent);
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: background 0.3s, transform 0.3s;
+}
+.trust-card:hover .trust-icon {
+  background: linear-gradient(135deg, rgba(166, 124, 82, 0.22) 0%, rgba(166, 124, 82, 0.12) 100%);
+  transform: scale(1.08);
+}
+
+/* Body */
+.trust-card-body {
+  flex: 1;
+}
+.trust-card h3 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+.trust-card p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Stat chip at bottom */
+.trust-card-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  transition: border-color 0.3s;
+}
+.trust-card:hover .trust-card-stat {
+  border-color: rgba(166, 124, 82, 0.2);
+}
+.trust-stat-num {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 400;
+  color: var(--color-accent);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.trust-stat-star {
+  font-size: 0.75em;
+  vertical-align: middle;
+  margin-left: 0.05em;
+}
+.trust-stat-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);

@@ -1,0 +1,18 @@
+/* ===== CSS-переменные — цвета, шрифты, отступы ===== */
+:root {
+  --color-bg: #faf9f7;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #f5f3f0;
+  --color-beige: #e8e4de;
+  --color-beige-deep: #d4cfc6;
+  --color-text: #2c2a26;
+  --color-text-muted: #6b6560;
+  --color-accent: #a67c52;
+  --color-accent-hover: #8b6b45;
+  --color-border: #e5e1db;
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-body: "Outfit", system-ui, sans-serif;
+  --container: min(1400px, 100% - 2rem);
+  --radius: 12px;
+  --radius-lg: 20px;
+}

@@ -1,0 +1,224 @@
+/* ===== СЕКЦИЯ РЕКОМЕНДАЦИЙ ===== */
+.recommendations {
+  padding: 6rem 0 5rem;
+  background: var(--color-bg);
+}
+.rec-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.rec-title {
+  font-family: var(--font-body);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0.4rem 0 0.9rem;
+  line-height: 1.2;
+}
+.rec-subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+/* Carousel wrapper — clips overflow */
+.rec-carousel-outer {
+  overflow: hidden;
+}
+.rec-carousel {
+  display: grid;
+  grid-template-columns: repeat(5, calc((100% - 2 * 1.5rem) / 3));
+  gap: 1.5rem;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Property card */
+.rec-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: box-shadow 0.25s, transform 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+.rec-card:hover {
+  box-shadow: 0 8px 32px rgba(44, 42, 38, 0.10);
+  transform: translateY(-3px);
+}
+
+/* Card image */
+.rec-card-img-wrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.rec-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.rec-card:hover .rec-card-img {
+  transform: scale(1.04);
+}
+
+/* Price badge */
+.rec-price {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: #f06a35;
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  border-radius: 30px;
+  z-index: 2;
+  line-height: 1.3;
+}
+.rec-price span {
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* Card body */
+.rec-card-body {
+  padding: 1.1rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  flex: 1;
+}
+.rec-card-name {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin: 0;
+}
+.rec-card-location {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+.rec-card-location svg {
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+/* Amenity meta: beds / baths / guests */
+.rec-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.rec-card-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+.rec-card-meta svg,
+.rec-card-meta img {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+/* Tour buttons */
+.rec-card-tours {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.rec-tour-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text);
+  border: 1px solid var(--color-beige-deep);
+  border-radius: 30px;
+  padding: 0.3rem 0.7rem;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+.rec-tour-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(166, 124, 82, 0.05);
+}
+
+/* Show more link */
+.rec-show-more {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-top: auto;
+  padding-top: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  transition: color 0.2s;
+}
+.rec-show-more:hover {
+  color: var(--color-accent);
+}
+
+/* Carousel navigation */
+.rec-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2.25rem;
+}
+.rec-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-beige-deep);
+  background: var(--color-surface);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.rec-nav-btn:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+.rec-nav-btn:disabled {
+  opacity: 0.38;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .rec-carousel {
+    grid-template-columns: repeat(5, calc((100% - 1rem) / 2));
+  }
+}
+@media (max-width: 580px) {
+  .rec-carousel {
+    grid-template-columns: repeat(5, 100%);
+  }
+  .recommendations {
+    padding: 4rem 0 3.5rem;
+  }
+}
+

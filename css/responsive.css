@@ -1,0 +1,58 @@
+/* ===== Общая адаптивность (планшеты и мобильные) ===== */
+@media (max-width: 900px) {
+  .spaces-preview-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .spaces-preview-text { text-align: center; }
+  .spaces-preview .section-desc { margin-left: auto; margin-right: auto; }
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .difference-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .difference-content .btn { margin: 0 auto; }
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .guarantees-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 280px;
+    padding: 5rem 0 1.5rem;
+    background: var(--color-surface);
+    border-left: 1px solid var(--color-border);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+  }
+  .nav a {
+    height: auto;
+    padding: 0.875rem 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+  }
+  .nav a::after { display: none; }
+  body.nav-open .nav {
+    transform: translateX(0);
+  }
+  .menu-toggle { display: flex; }
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

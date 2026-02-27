@@ -1,0 +1,581 @@
+/* ===== Секция бронирования — тёмный фон + виджет поиска ===== */
+.booking-bar {
+  position: relative;
+  z-index: 10;
+  padding: 6rem 0 5.5rem;
+  background: #1a1815;
+  border-bottom: none;
+}
+
+/* --- Декоративные фоновые слои --- */
+.bw-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.bw-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(72px);
+  pointer-events: none;
+}
+.bw-bg-glow--1 {
+  top: -25%;
+  right: -8%;
+  width: 55vw;
+  height: 55vw;
+  background: radial-gradient(circle, rgba(166, 124, 82, 0.22) 0%, transparent 65%);
+}
+.bw-bg-glow--2 {
+  bottom: -35%;
+  left: -12%;
+  width: 44vw;
+  height: 44vw;
+  background: radial-gradient(circle, rgba(166, 124, 82, 0.14) 0%, transparent 65%);
+}
+.bw-bg-glow--3 {
+  top: 40%;
+  left: 38%;
+  width: 28vw;
+  height: 28vw;
+  background: radial-gradient(circle, rgba(188, 146, 101, 0.07) 0%, transparent 65%);
+  filter: blur(100px);
+}
+.bw-bg-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.bw-bg-ring {
+  position: absolute;
+  pointer-events: none;
+}
+.bw-bg-ring--1 {
+  width: 500px;
+  height: 500px;
+  top: -15%;
+  right: 2%;
+  opacity: 0.7;
+}
+.bw-bg-ring--2 {
+  width: 700px;
+  height: 700px;
+  bottom: -30%;
+  left: -8%;
+  opacity: 0.5;
+}
+.bw-bg-arc {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  bottom: -10%;
+  right: 12%;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.bw-bg-lines {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-evenly;
+  pointer-events: none;
+}
+.bw-bg-lines span {
+  display: block;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.04) 30%, rgba(255,255,255,0.04) 70%, transparent 100%);
+}
+
+/* --- Заголовок секции бронирования --- */
+.bw-eyebrow {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 0.75rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.bw-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 2.5rem;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 32px rgba(0, 0, 0, 0.3);
+}
+.bw-heading-br { display: inline; }
+
+/* --- Бейджи доверия под виджетом (frosted glass) --- */
+.bw-trust-pills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
+}
+.bw-trust-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.125rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.bw-trust-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(166, 124, 82, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+}
+.bw-trust-pill svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* Горизонтальный бар виджета (белая пилюля) */
+.booking-widget {
+  display: flex;
+  align-items: center;
+  background: var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 100px;
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.35), 0 2px 12px rgba(0, 0, 0, 0.2);
+  padding: 0 0.375rem;
+  position: relative;
+  z-index: 20;
+  overflow: visible;
+}
+
+/* Поля виджета и кнопки-триггеры */
+.bw-field {
+  position: relative;
+  flex: 1;
+}
+.bw-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1.125rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+.bw-trigger:hover,
+.bw-field--open .bw-trigger {
+  background: var(--color-surface-elevated);
+}
+.bw-icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+.bw-trigger-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+  min-width: 0;
+}
+.bw-trigger-hint {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+.bw-trigger-value {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bw-chevron {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.bw-field--open .bw-chevron {
+  transform: rotate(180deg);
+}
+.bw-sep {
+  width: 1px;
+  height: 36px;
+  background: var(--color-border);
+  flex-shrink: 0;
+}
+
+/* Базовые стили выпадающих дропдаунов */
+.bw-dropdown {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 56px rgba(44, 42, 38, 0.12), 0 4px 16px rgba(44, 42, 38, 0.06);
+  display: none;
+  z-index: 200;
+  min-width: 200px;
+  animation: bw-drop-in 0.18s ease-out;
+}
+.bw-dropdown--open {
+  display: block;
+}
+@keyframes bw-drop-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Дропдаун выбора района */
+.bw-city-opt {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1.25rem;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--color-text);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.bw-city-opt:first-child { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+.bw-city-opt:last-child  { border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
+.bw-city-opt:hover { background: var(--color-surface-elevated); }
+.bw-city-opt--active { color: var(--color-accent); font-weight: 600; }
+
+/* Дропдаун календаря — двухмесячный выбор диапазона дат */
+.bw-calendar-wrap {
+  left: -1rem;
+  width: max-content;
+  padding: 1.5rem;
+  min-width: unset;
+}
+.bw-cal-nav {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.bw-cal-months {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+}
+.bw-cal-month {
+  flex: 1;
+  min-width: 220px;
+}
+.bw-cal-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  margin-top: 0.15rem;
+}
+.bw-cal-arrow:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+.bw-cal-header {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.bw-cal-labels {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 0.375rem;
+}
+.bw-cal-labels span {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 0.25rem 0;
+}
+.bw-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px 0;
+}
+.bw-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--color-text);
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  position: relative;
+  z-index: 1;
+}
+.bw-day:hover:not(.bw-day--past):not(.bw-day--empty) {
+  background: var(--color-beige);
+}
+.bw-day--empty {
+  pointer-events: none;
+}
+.bw-day--past {
+  color: var(--color-beige-deep);
+  cursor: default;
+  pointer-events: none;
+}
+.bw-day--today {
+  font-weight: 700;
+}
+.bw-day--today::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+/* Полоса выделенного диапазона дат между start и end */
+.bw-day--in-range {
+  background: rgba(166, 124, 82, 0.1);
+  border-radius: 0;
+  color: var(--color-text);
+}
+/* Круглые маркеры начала и конца диапазона */
+.bw-day--start,
+.bw-day--end {
+  background: var(--color-accent) !important;
+  color: #fff !important;
+  font-weight: 600;
+  border-radius: 50%;
+}
+.bw-day--start::after,
+.bw-day--end::after { display: none; }
+/* Полоска-хвост: у start — справа, у end — слева */
+.bw-day--start:not(.bw-day--end)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  background: rgba(166, 124, 82, 0.1);
+  z-index: -1;
+  border-radius: 0;
+}
+.bw-day--end:not(.bw-day--start)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  right: 50%;
+  background: rgba(166, 124, 82, 0.1);
+  z-index: -1;
+  border-radius: 0;
+}
+.bw-cal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+.bw-cal-clear {
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.bw-cal-clear:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* Дропдаун гостей — счётчики Adults / Children / Pets */
+.bw-guests-wrap {
+  right: 4.5rem;
+  left: auto;
+  min-width: 300px;
+  padding: 0.5rem 0;
+}
+.bw-guest-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.bw-guest-row:last-child { border-bottom: none; }
+.bw-guest-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.bw-guest-type {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+.bw-guest-sub {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+.bw-guest-sub--accent {
+  color: var(--color-accent);
+}
+.bw-guest-counter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.bw-cnt-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1.5px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+  padding: 0;
+  flex-shrink: 0;
+}
+.bw-cnt-btn:hover:not(:disabled) {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+.bw-cnt-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.bw-cnt-num {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  min-width: 1.5rem;
+  text-align: center;
+  display: block;
+}
+
+/* Кнопка поиска (золотистый градиент) */
+.bw-search-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.625rem;
+  background: linear-gradient(135deg, #bc9265 0%, var(--color-accent) 55%, var(--color-accent-hover) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  margin: 0.375rem;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  box-shadow: 0 4px 16px rgba(166, 124, 82, 0.28);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.bw-search-btn:hover {
+  background: linear-gradient(135deg, #bc9265 0%, var(--color-accent-hover) 100%);
+  box-shadow: 0 6px 22px rgba(166, 124, 82, 0.36);
+  transform: translateY(-1px);
+}
+.bw-search-btn:active { transform: translateY(0); }
+
+/* Адаптивность виджета бронирования */
+@media (max-width: 1024px) {
+  .bw-trigger { padding: 1rem 1.125rem; }
+  .bw-trigger-value { font-size: 0.875rem; }
+}
+@media (max-width: 900px) {
+  .booking-bar { padding: 4rem 0 4.5rem; }
+  .bw-heading { font-size: clamp(1.75rem, 5vw, 2.25rem); }
+  .booking-widget {
+    border-radius: var(--radius-lg);
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .bw-field { flex: none; width: 50%; }
+  .bw-trigger { border-radius: 0; }
+  .bw-sep { display: none; }
+  .bw-search-btn {
+    width: calc(100% - 0.75rem);
+    margin: 0 0.375rem 0.375rem;
+    justify-content: center;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  }
+  .bw-calendar-wrap { left: 0; }
+  .bw-guests-wrap { right: 0; left: auto; }
+}
+@media (max-width: 640px) {
+  .booking-bar { padding: 3.5rem 0 4rem; }
+  .bw-heading-br { display: none; }
+  .bw-field { width: 100%; }
+  .bw-cal-months { flex-direction: column; gap: 1.5rem; }
+  .bw-calendar-wrap {
+    position: fixed;
+    bottom: 0; left: 0; right: 0; top: auto;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+  .bw-guests-wrap { left: 0; right: 0; }
+  .bw-trust-pills { gap: 0.5rem; }
+  .bw-trust-pill { font-size: 0.75rem; padding: 0.4375rem 0.875rem; }
+}

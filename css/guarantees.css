@@ -1,0 +1,23 @@
+/* ===== Секция гарантий — бежевый фон ===== */
+.guarantees {
+  padding: 4rem 0;
+  background: var(--color-beige);
+}
+.guarantees-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.guarantee-item h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+.guarantee-item p {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+

@@ -1,0 +1,31 @@
+/* ===== Превью объектов — фото + текст ===== */
+.spaces-preview {
+  padding: 5rem 0;
+}
+.spaces-preview-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.spaces-preview-text {
+  text-align: left;
+}
+.spaces-preview .section-title { margin-bottom: 0.5rem; }
+.section-desc {
+  color: var(--color-text-muted);
+  max-width: 32rem;
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+}
+.spaces-preview-img {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 56px rgba(44, 42, 38, 0.05);
+}
+.spaces-preview-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+}

@@ -1,0 +1,44 @@
+/* ===== Кнопки — базовые стили и варианты ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: var(--radius);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #bc9265 0%, var(--color-accent) 55%, var(--color-accent-hover) 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 16px rgba(166, 124, 82, 0.25);
+  transition: background 0.25s, box-shadow 0.25s, transform 0.15s;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #bc9265 0%, var(--color-accent-hover) 100%);
+  color: #fff;
+  box-shadow: 0 6px 22px rgba(166, 124, 82, 0.32);
+  transform: translateY(-1px);
+}
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(166, 124, 82, 0.2);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+.btn-outline:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-muted);
+  border: none;
+}
+.btn-ghost:hover { color: var(--color-text); }
+.btn-lg { padding: 1rem 2rem; font-size: 1rem; }

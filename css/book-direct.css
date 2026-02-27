@@ -1,0 +1,182 @@
+/* ===== Почему бронировать напрямую — 4 пункта ===== */
+/* ===== Why Book Direct ===== */
+.book-direct {
+  padding: 4rem 0;
+}
+.book-direct-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 64px rgba(44, 42, 38, 0.1);
+  min-height: 460px;
+}
+
+/* Левая панель */
+.bd-left {
+  background: #2c2a26;
+  padding: 3.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.bd-left::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(166, 124, 82, 0.15);
+  pointer-events: none;
+}
+.bd-left::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: -40px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(166, 124, 82, 0.08);
+  pointer-events: none;
+}
+.bd-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 1rem;
+}
+.bd-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.bd-desc {
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.65;
+  margin: 0 0 2rem;
+  max-width: 320px;
+}
+.bd-actions {
+  display: flex;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.bd-btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.75rem;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: background 0.2s, transform 0.15s;
+}
+.bd-btn-primary:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+.bd-btn-ghost {
+  background: transparent;
+  color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 0.75rem 1.75rem;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+.bd-btn-ghost:hover {
+  border-color: rgba(255,255,255,0.55);
+  color: #fff;
+}
+.bd-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+}
+.bd-badge svg {
+  width: 15px;
+  height: 15px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* Правая панель */
+.bd-right {
+  background: var(--color-surface);
+  padding: 3rem 2.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+.bd-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.125rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.2s;
+}
+.bd-item:first-child { padding-top: 0; }
+.bd-item:last-child { border-bottom: none; padding-bottom: 0; }
+.bd-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(166, 124, 82, 0.1);
+  border-radius: 12px;
+  color: var(--color-accent);
+  transition: background 0.2s;
+}
+.bd-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.bd-item:hover .bd-icon {
+  background: rgba(166, 124, 82, 0.2);
+}
+.bd-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 0.3rem;
+}
+.bd-item p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .book-direct-block {
+    grid-template-columns: 1fr;
+  }
+  .bd-left {
+    padding: 2.5rem 2rem;
+  }
+  .bd-right {
+    padding: 2rem 2rem;
+  }
+}
+
